@@ -4964,11 +4964,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\k8s-client\\k8s-client\\k8s-client\\k8s-client.csproj",
+      "projectUniqueName": "C:\\repos\\k8s-client\\k8s-client\\k8s-client.csproj",
       "projectName": "k8s-client",
-      "projectPath": "C:\\repos\\k8s-client\\k8s-client\\k8s-client\\k8s-client.csproj",
+      "projectPath": "C:\\repos\\k8s-client\\k8s-client\\k8s-client.csproj",
       "packagesPath": "C:\\Users\\carlos.sousa\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\k8s-client\\k8s-client\\k8s-client\\obj\\",
+      "outputPath": "C:\\repos\\k8s-client\\k8s-client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -39,15 +39,15 @@ namespace k8s_client.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromQuery] string name)
+        public IActionResult Post([FromQuery] string name, string namespaceName)
         {
-            var ns = new V1Pod
+            var pod = new V1Pod
             {
                 ApiVersion = "v1",
                 Kind = "Pod",
                 Metadata = new V1ObjectMeta
                 {
-                    Name = "pod-test"
+                    Name = name
                 },
                 Spec = new V1PodSpec
                 {
@@ -62,7 +62,7 @@ namespace k8s_client.Controllers
                 }
             };
 
-            var result = kubeClient.CreateNamespacedPod(ns, "test");
+            var result = kubeClient.CreateNamespacedPod(pod, namespaceName);
             return Ok();
         }
 

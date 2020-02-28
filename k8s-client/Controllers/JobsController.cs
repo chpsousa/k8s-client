@@ -43,7 +43,7 @@ namespace k8s_client.Controllers
         {
             var job = new V1Job
             {
-                ApiVersion = "v1",
+                ApiVersion = "batch/v1",
                 Kind = "Job",
                 Metadata = new V1ObjectMeta
                 {
@@ -51,7 +51,20 @@ namespace k8s_client.Controllers
                 },
                 Spec = new V1JobSpec
                 {
-                    
+                    Template = new V1PodTemplateSpec()
+                    {
+                        Spec = new V1PodSpec()
+                        {
+                            Containers = new List<V1Container>()
+                            {
+                                new V1Container()
+                                {
+                                    Name = "container-test",
+                                    Image = "hello-world"
+                                }
+                            }
+                        }
+                    }
                 }
             };
 

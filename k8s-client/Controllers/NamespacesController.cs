@@ -46,6 +46,22 @@ namespace k8s_client.Controllers
             return kubeClient.ListNamespacedPod(ns.Metadata.Name).Items;
         }
 
+        [HttpGet("{name}/jobs")]
+        public IEnumerable<V1Job> GetJobs([FromRoute] string name)
+        {
+            var namespaces = kubeClient.ListNamespace();
+            var ns = namespaces.Items.Where(w => w.Metadata.Name.StartsWith(name)).SingleOrDefault();
+            return kubeClient.ListNamespacedJob(ns.Metadata.Name).Items;
+        }
+
+        [HttpGet("{name}/services")]
+        public IEnumerable<V1Service> GetServices([FromRoute] string name)
+        {
+            var namespaces = kubeClient.ListNamespace();
+            var ns = namespaces.Items.Where(w => w.Metadata.Name.StartsWith(name)).SingleOrDefault();
+            return kubeClient.ListNamespacedService(ns.Metadata.Name).Items;
+        }
+
         [HttpPost]
         public IActionResult Post([FromQuery] string name)
         {

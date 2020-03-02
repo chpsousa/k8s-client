@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using k8s;
 using k8s.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -62,7 +60,8 @@ namespace k8s_client.Controllers
                                     Name = "container-test",
                                     Image = "hello-world"
                                 }
-                            }
+                            }, 
+                            RestartPolicy = "Never"
                         }
                     }
                 }
